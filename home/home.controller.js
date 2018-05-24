@@ -5,8 +5,8 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['UserService', '$rootScope'];
-    function HomeController(UserService, $rootScope) {
+    HomeController.$inject = ['UserService', '$rootScope', 'AuthenticationService', '$location'];
+    function HomeController(UserService, $rootScope, AuthenticationService, $location) {
         var vm = this;
 
         vm.user = null;
@@ -23,6 +23,12 @@
                     vm.user = user;
                 });
         }
+
+        vm.logout = function () {
+            AuthenticationService.ClearCredentials();
+            $location.path('/welcome');
+            FlashService.Success("You have successfully logged out");
+        };
     }
 
 })();

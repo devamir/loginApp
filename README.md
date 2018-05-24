@@ -22,3 +22,12 @@ Login/Logout Workflow-example
    Hit CTRL-C to stop the server
 
 5. Now go to http://localhost:8080 and the application Welcome page is present
+
+User Credentials
+User 1:
+admin
+admin123
+
+User 2:
+guest
+guest123
